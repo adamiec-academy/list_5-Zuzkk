@@ -4,8 +4,9 @@ def reversed_words():
     for line in open("words.txt", encoding="utf-8"):
         words.add(line.strip())
     for word in words:
-       if word[::-1] in words:
-           pair = word, word[::-1]
+        rev_word = word[::-1]
+       if rev_word in words and rev_word != word:
+           pair = word, rev_word
            reversed_words.append(pair)
     reversed_words.sort()
     return reversed_words
