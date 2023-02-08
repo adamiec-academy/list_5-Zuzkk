@@ -6,7 +6,6 @@ def reversed_words():
     for word in words:
         rev_word = word[::-1]
        if rev_word in words and rev_word != word:
-           pair = word, rev_word
-           reversed_words.append(pair)
+           reversed_words.append(tuple(sorted((word, rev_word))))
     reversed_words.sort()
     return reversed_words
